@@ -5,6 +5,25 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(./images/cool-background.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+}
+
+@font-face {
+  font-family: "Kenyan-Coffee";
+  src: url("./fonts/webfonts_Kenyan-Coffee/Kenyan-Coffee.ttf.woff")
+      format("woff"),
+    url("./fonts/webfonts_Kenyan-Coffee/Kenyan-Coffee.ttf.svg#Kenyan-Coffee")
+      format("svg"),
+    url("./fonts/webfonts_Kenyan-Coffee/Kenyan-Coffee.ttf.eot"),
+    url("./fonts/webfonts_Kenyan-Coffee/Kenyan-Coffee.ttf.eot?#iefix")
+      format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 code {
@@ -12,27 +31,76 @@ code {
     monospace;
 }
 
-.logo {
-  color: darkmagenta;
-  font-family: "Tajawal";
-}
-
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: darkseagreen;
   height: 50px;
 }
 
-.connect {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  height: 50px;
+}
+
+.how-it-works {
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  border: none;
+  font-family: "Jost";
+  font-size: 22px;
+  cursor: pointer;
   width: 160px;
   height: 50px;
-  justify-content: center;
-  background-color: lawngreen;
-  border: 0ch;
+}
+
+.how-it-works:hover {
+  background-color: #f68c8a;
+}
+
+.logo {
+  font-family: "Kenyan-Coffee";
+  font-size: x-large;
+  color: black;
+}
+
+.launch-app {
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 40px;
+  border-color: black;
+  font-family: "Jost";
+  font-size: 22px;
+  cursor: pointer;
+  width: 160px;
+  height: 50px;
+}
+
+.launch-app:hover {
+  background-color: #c23626;
+}
+
+.main-text {
+  margin-top: 100px;
+  margin-left: 40px;
+  font-size: 40px;
+  font-family: "Oswald";
+}
+
+.main-h1 {
+  margin-bottom: -40px;
+}
+
+.logo-text::first-letter {
+  color: red;
+}
+
+.logo-text {
+  display: inline-block;
 }
