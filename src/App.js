@@ -9,7 +9,7 @@ function App() {
     <DAppProvider config={{}}>
       <div>
         <Routes>
-          <Route path='/' element={<div><Navbar /><Main /></div>} />
+          <Route path='/' element={<div className='home'><Navbar /><Main /></div>} />
           <Route path='/dashboard' element={<div><Dashboard /></div>} />
 
         </Routes>

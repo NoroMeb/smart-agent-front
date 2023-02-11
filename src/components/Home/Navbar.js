@@ -4,8 +4,7 @@ function Navbar() {
   return (
     <header className='Navbar'>
       <div class="logo">
-        <h1 className="logo-text">Smart</h1>
-        <h1 className="logo-text">Agent</h1>
+        <h1 className="logo-text">SmartAgent</h1>
       </div>
       <div className="buttons">
         <button className='how-it-works'>Fund us</button>
