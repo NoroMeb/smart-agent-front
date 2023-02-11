@@ -5,12 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(./images/cool-background.svg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  margin: 0;
 }
 
 @font-face {
@@ -29,6 +23,14 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.home {
+  background-image: url(./images/home_background.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
 }
 
 header {
@@ -66,7 +68,8 @@ header {
 .logo {
   font-family: "Kenyan-Coffee";
   font-size: x-large;
-  color: black;
+  color: white;
+  text-shadow: rgba(255, 255, 255, 0.96) 0px 0px 18px;
 }
 
 .launch-app {
@@ -91,14 +94,11 @@ header {
   margin-left: 40px;
   font-size: 40px;
   font-family: "Oswald";
+  color: white;
 }
 
 .main-h1 {
   margin-bottom: -40px;
-}
-
-.logo-text::first-letter {
-  color: red;
 }
 
 .logo-text {
