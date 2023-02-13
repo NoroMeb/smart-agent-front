@@ -1,9 +1,17 @@
-import Header from "./Header";
+import Header from "./Header/Header";
+import LeftBar from "./NavBar/LeftBar";
+import { Outlet } from 'react-router-dom';
+import Videos from './pages/Videos';
+import Grid from '@mui/material/Grid';
+
+
+
 function Dashboard() {
     return (
-        <div>
-            <Header />
-        </div>
+        <Grid container >
+            <LeftBar />
+            <Outlet />
+        </Grid>
     );
 }
 
