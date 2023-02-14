@@ -20,6 +20,52 @@ body {
   font-style: normal;
 }
 
+.custom-offcanvas.offcanvas {
+  width: 270px;
+  background-color: #282828;
+}
+
+.navbar {
+  background-color: #282828;
+}
+
+.custom-button {
+  background-color: #c23626;
+  border: none;
+  border-radius: 0%;
+  width: 120px;
+  font-family: "Jost";
+  font-size: x-large;
+}
+
+.custom-button:hover {
+  background-color: #ff0000;
+}
+
+.custom-button:active {
+  background-color: #ff0000 !important;
+}
+
+@media (min-width: 992px) {
+  body {
+    overflow: auto !important;
+  }
+  .navbar-toggler {
+    display: none;
+  }
+
+  .offcanvas-backdrop {
+    display: none;
+  }
+  .custom-offcanvas.offcanvas {
+    -webkit-transform: none;
+    transform: none;
+    visibility: visible !important;
+    height: calc(100% - 56px);
+    top: 56px;
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -95,10 +141,6 @@ header {
   font-size: 40px;
   font-family: "Oswald";
   color: white;
-}
-
-.main-h1 {
-  margin-bottom: -40px;
 }
 
 .logo-text {
