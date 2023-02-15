@@ -33,7 +33,7 @@ body {
   background-color: #c23626;
   border: none;
   border-radius: 0%;
-  width: 120px;
+  width: 180px;
   font-family: "Jost";
   font-size: x-large;
 }
@@ -145,4 +145,15 @@ header {
 
 .logo-text {
   display: inline-block;
+}
+
+li {
+  font-family: "Jost";
+}
+li:active {
+  background-color: #c23626;
+}
+
+li:hover {
+  border-left: solid;
 }
