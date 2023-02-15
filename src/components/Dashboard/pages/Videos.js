@@ -1,6 +1,6 @@
 function Videos() {
     return (
-        <div>
+        <div className="main">
 
             This is Videos page.
         </div>
