@@ -21,18 +21,19 @@ body {
 }
 
 .custom-offcanvas.offcanvas {
-  width: 270px;
+  width: inherit;
   background-color: #282828;
 }
 
 .navbar {
   background-color: #282828;
+  position: fixed;
 }
 
 .custom-button {
   background-color: #c23626;
   border: none;
-  border-radius: 0%;
+  border-radius: 10px;
   width: 180px;
   font-family: "Jost";
   font-size: x-large;
@@ -62,7 +63,8 @@ body {
     transform: none;
     visibility: visible !important;
     height: calc(100% - 56px);
-    top: 56px;
+    top: 63px;
+    transform: none;
   }
 }
 
@@ -156,4 +158,23 @@ li:active {
 
 li:hover {
   border-left: solid;
+}
+
+/* .main-scroll {
+  overflow-y: auto;
+  margin-top: 62px;
+  color: #ff0000;
+} */
+
+.main-scroll {
+  overflow: auto;
+  /* margin-top: 100px; */
+  color: #ff0000;
+}
+
+.main {
+  overflow: auto;
+  background-color: #f68c8a;
+  max-height: 30rem;
+  background-color: #282828;
 }
