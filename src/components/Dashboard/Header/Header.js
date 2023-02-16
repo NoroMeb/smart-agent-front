@@ -1,14 +1,15 @@
 import * as React from 'react';
 import { useEthers } from '@usedapp/core';
 
-export function Header() {
+export function Header(props) {
 
     const { activateBrowserWallet, account, deactivate } = useEthers();
 
+    props.updateMyProp(account);
     return (
 
 
-        <nav class="navbar navbar-dark  ms-auto ">
+        <nav class="navbar navbar-dark  ms-auto fixed-top">
             {/* <nav class="navbar navbar-dark  ms-auto fixed-top "> */}
 
             <div class="container-fluid">
