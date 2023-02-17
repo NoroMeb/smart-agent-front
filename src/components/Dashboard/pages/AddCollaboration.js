@@ -1,21 +1,16 @@
 import { useState, useEffect } from "react";
+import { useOutletContext } from "react-router-dom";
+import { useCreateCollaboration } from "../../../hooks/useCreateCollaboration";
+export function AddCollaboration() {
 
-function AddCollaboration() {
-
-    // const ethAmount = 1; // Amount of ETH to convert
-    const apiKey = 'ZKW7whJ5AjQoMhcg'; // Your Coinbase API key
+    // -------------------------------------------------------------------------------
+    const apiKey = process.env.REACT_APP_COIN_BASE_API_KEY;// Your Coinbase API key
     const apiUrl = `https://api.coinbase.com/v2/exchange-rates?currency=ETH`;
-
-    // Make a request to the Coinbase API
-
     const [data, setData] = useState(null);
-    const [ethAmount, setEthAmount] = useState(1);
-
-    const handleInputChange = (event) => {
-        setEthAmount(event.target.value);
-    };
+    const [ethAmount, setEthAmount] = useState(null);
 
 
+    const account = useOutletContext();
     useEffect(() => {
         fetch(apiUrl, {
             headers: {
@@ -30,40 +25,71 @@ function AddCollaboration() {
             })
             .catch(error => console.error(error));
     }, [ethAmount]);
+    // -------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------
+    const initialValues = {
+        promoterAddress: "",
+        videoUrl: "",
+        amountPerView: "",
+        endDate: ""
+    };
+    const [values, setValues] = useState({
+        promoterAddress: "",
+        videoUrl: "",
+        amountPerView: "",
+        endDate: ""
+    });
+
+
+    function handleInputChange(event) {
+        const { name, value } = event.target
+        setEthAmount(event.target.value)
+        setValues(prevValues => {
+            return {
+                ...prevValues,
+                [name]: value
+            }
+        })
+    }
+
+    // const { state, send } = useCreateCollaboration();
+
+    const handleCreateCollaboration = (event) => {
+        console.log(Object.values(values));
+        event.preventDefault();
+    }
+    // -------------------------------------------------------------------------------
 
     return (
-        <form >
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1"><i class='fas fa-wallet' style={{ marginRight: '4px' }}></i></span>
-                <input type="text" class="form-control" placeholder="Your Address" aria-label="Username" aria-describedby="basic-addon1" />
-            </div>
+        <form style={{ width: '600px' }}>
 
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon2"><i class='fas fa-wallet' style={{ marginRight: '4px' }}></i></span>
-                <input type="text" class="form-control" placeholder="Promoter Address" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                <input type="text" class="form-control" placeholder="Promoter Address" value={values.promoterAddress} name="promoterAddress" onChange={handleInputChange} />
             </div>
-
-            {data ? <h1>{data} $</h1> : <h1>HIII</h1>}
 
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon3">Video URL</span>
-                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="https://www.youtube.com/watch?v=VIDEO-ID" />
+                <input type="text" class="form-control" id="basic-url" placeholder="https://www.youtube.com/watch?v=VIDEO-ID" name="videoUrl" value={values.videoUrl} onChange={handleInputChange} />
             </div>
 
             <div class="input-group mb-3">
                 <span class="input-group-text">Amount Per view</span>
-                <input type='number' class="form-control" id="myInput" min="0.000000000000000001" max="1" step="0.000000000000000001" onChange={handleInputChange} />
+                <input type='number' class="form-control" id="myInput" min="0.000000000000000001" max="1" step="0.000000000000000001" name="amountPerView" value={values.amountPerView} onChange={handleInputChange} />
                 <span class="input-group-text">ETH</span>
+                {data ? <span class="input-group-text"> {data.toFixed(2)} $</span> : <span class="input-group-text">$</span>}
             </div>
-
 
             <div class="input-group mb-3">
                 <span class="input-group-text">End date</span>
-                <input id="startDate" class="form-control" type="date" />
+                <input id="startDate" class="form-control" type="date" name="endDate" value={values.endDate} onChange={handleInputChange} />
 
             </div>
-            <hr />
-            <button type="submit" class="btn btn-primary custom-button ">Submit</button>
+
+            <div class="d-flex justify-content-center ">
+
+                <button type="submit" class="btn btn-primary create-collab-button mt-4" onClick={handleCreateCollaboration}>Create Collaboration</button>
+            </div>
 
         </form>
 
