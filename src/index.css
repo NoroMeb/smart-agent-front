@@ -8,16 +8,8 @@ body {
 }
 
 @font-face {
-  font-family: "Kenyan-Coffee";
-  src: url("./fonts/webfonts_Kenyan-Coffee/Kenyan-Coffee.ttf.woff")
-      format("woff"),
-    url("./fonts/webfonts_Kenyan-Coffee/Kenyan-Coffee.ttf.svg#Kenyan-Coffee")
-      format("svg"),
-    url("./fonts/webfonts_Kenyan-Coffee/Kenyan-Coffee.ttf.eot"),
-    url("./fonts/webfonts_Kenyan-Coffee/Kenyan-Coffee.ttf.eot?#iefix")
-      format("embedded-opentype");
-  font-weight: normal;
-  font-style: normal;
+  font-family: "youtube-sans";
+  src: url("./fonts/youtube-sans/youtube-sans-bold.ttf");
 }
 
 .custom-offcanvas.offcanvas {
@@ -114,10 +106,9 @@ header {
 }
 
 .logo {
-  font-family: "Kenyan-Coffee";
+  font-family: "youtube-sans";
   font-size: x-large;
   color: white;
-  text-shadow: rgba(255, 255, 255, 0.96) 0px 0px 18px;
 }
 
 .launch-app {
@@ -169,12 +160,32 @@ li:hover {
 .main-scroll {
   overflow: auto;
   /* margin-top: 100px; */
-  color: #ff0000;
 }
 
 .main {
   overflow: auto;
   background-color: #f68c8a;
   max-height: 30rem;
-  background-color: #282828;
+}
+
+.create-collab-button {
+  background-color: #c23626;
+  border: none;
+  border-radius: 10px;
+  font-family: "Jost";
+  font-size: x-large;
+}
+
+.create-collab-button:hover {
+  background-color: #ff0000;
+}
+
+.create-collab-button:active {
+  background-color: #ff0000 !important;
+}
+
+.navbar-brand {
+  font-family: "youtube-sans";
+  font-size: x-large;
+  margin-left: 30px !important;
 }
