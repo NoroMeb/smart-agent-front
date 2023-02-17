@@ -1,11 +1,15 @@
 import * as React from 'react';
 import { useEthers } from '@usedapp/core';
 
+
 export function Header(props) {
 
     const { activateBrowserWallet, account, deactivate } = useEthers();
 
     props.updateMyProp(account);
+
+
+
     return (
 
 
@@ -26,9 +30,6 @@ export function Header(props) {
                 >
                     <i class="bi bi-list"></i>
                 </button>
-                {/* <button type="button" class="btn btn-primary custom-button" onClick={() => activateBrowserWallet()}>
-                    {account ? `${account.substring(0, 6)}...` : "Connect"}
-                </button> */}
                 {account ? (
                     <button type="button" class="btn btn-primary custom-button" onClick={deactivate}>
                         {account.substring(0, 7)}...
