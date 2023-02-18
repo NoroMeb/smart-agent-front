@@ -43,7 +43,14 @@ export function AddCollaboration() {
 
     function handleInputChange(event) {
         const { name, value } = event.target
+        if (name === "amountPerView") {
         setEthAmount(event.target.value)
+            setChangedInput(1)
+        }
+        if (name === "Total") {
+            setEthAmount(event.target.value)
+            setChangedInput(2)
+        }
         setValues(prevValues => {
             return {
                 ...prevValues,
@@ -77,7 +84,14 @@ export function AddCollaboration() {
                 <span class="input-group-text">Amount Per view</span>
                 <input type='number' class="form-control" id="myInput" min="0.000000000000000001" max="1" step="0.000000000000000001" name="amountPerView" value={values.amountPerView} onChange={handleInputChange} />
                 <span class="input-group-text">ETH</span>
-                {data ? <span class="input-group-text"> {data.toFixed(2)} $</span> : <span class="input-group-text">$</span>}
+                {data && changedInput === 1 ? <span class="input-group-text"> {data.toFixed(2)} $</span> : <span class="input-group-text">$</span>}
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Total</span>
+                <input id="startDate" class="form-control" type="number" name="Total" value={values.Total} onChange={handleInputChange} />
+                <span class="input-group-text">ETH</span>
+                {data && changedInput === 2 ? <span class="input-group-text"> {data.toFixed(2)} $</span> : <span class="input-group-text">$</span>}
             </div>
 
             <div class="input-group mb-3">
