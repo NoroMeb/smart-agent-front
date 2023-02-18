@@ -1,13 +1,18 @@
 import { useState, useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
-import { useCreateCollaboration } from "../../../hooks/useCreateCollaboration";
+import { useCreateCollaboration } from "./../../../hooks/useCreateCollaboration";
+import { ethers } from 'ethers';
+
 export function AddCollaboration() {
+
+
 
     // -------------------------------------------------------------------------------
     const apiKey = process.env.REACT_APP_COIN_BASE_API_KEY;// Your Coinbase API key
     const apiUrl = `https://api.coinbase.com/v2/exchange-rates?currency=ETH`;
     const [data, setData] = useState(null);
     const [ethAmount, setEthAmount] = useState(null);
+    const [changedInput, setChangedInput] = useState(null);
 
 
     const account = useOutletContext();
@@ -27,16 +32,11 @@ export function AddCollaboration() {
     }, [ethAmount]);
     // -------------------------------------------------------------------------------
     // -------------------------------------------------------------------------------
-    const initialValues = {
-        promoterAddress: "",
-        videoUrl: "",
-        amountPerView: "",
-        endDate: ""
-    };
     const [values, setValues] = useState({
         promoterAddress: "",
         videoUrl: "",
         amountPerView: "",
+        Total: "",
         endDate: ""
     });
 
@@ -44,7 +44,7 @@ export function AddCollaboration() {
     function handleInputChange(event) {
         const { name, value } = event.target
         if (name === "amountPerView") {
-        setEthAmount(event.target.value)
+            setEthAmount(event.target.value)
             setChangedInput(1)
         }
         if (name === "Total") {
@@ -59,10 +59,30 @@ export function AddCollaboration() {
         })
     }
 
-    // const { state, send } = useCreateCollaboration();
+    const { state, send } = useCreateCollaboration();
+
+    function getVideoId(url) {
+        const match = url.match(/(?:\/|%3D|v=)([\w-]{11})(?:[%#?&]|$)/);
+        return match ? match[1] : null;
+    }
+
 
     const handleCreateCollaboration = (event) => {
-        console.log(Object.values(values));
+        const promoterAddress = values["promoterAddress"]
+        const clientAddress = account
+
+        const videoId = getVideoId(values["videoUrl"])
+        const youtubeApiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
+
+        const videoUrl = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=" + videoId + "&key=" + youtubeApiKey;
+
+        const endDate = values["endDate"].split("-")
+        const newendDate = new Date(endDate[0], endDate[1], endDate[2])
+        const endTimestamp = newendDate.getTime()
+        const amount = ethers.utils.parseEther(values["amountPerView"])
+        const total = ethers.utils.parseEther(values["Total"])
+        send(promoterAddress, clientAddress, videoUrl, endTimestamp, amount, { value: total })
+        console.log(state)
         event.preventDefault();
     }
     // -------------------------------------------------------------------------------
@@ -76,8 +96,8 @@ export function AddCollaboration() {
             </div>
 
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon3">Video URL</span>
-                <input type="text" class="form-control" id="basic-url" placeholder="https://www.youtube.com/watch?v=VIDEO-ID" name="videoUrl" value={values.videoUrl} onChange={handleInputChange} />
+                <span class="input-group-text" id="basic-addon3"><i class='fab fa-youtube'></i></span>
+                <input type="text" class="form-control" id="basic-url" placeholder="Video URL" name="videoUrl" value={values.videoUrl} onChange={handleInputChange} />
             </div>
 
             <div class="input-group mb-3">
@@ -99,6 +119,7 @@ export function AddCollaboration() {
                 <input id="startDate" class="form-control" type="date" name="endDate" value={values.endDate} onChange={handleInputChange} />
 
             </div>
+
 
             <div class="d-flex justify-content-center ">
 
