@@ -4957,6 +4957,21 @@
     "loader-utils" "^2.0.0"
     "schema-utils" "^3.0.0"
 
+"file-match@^1.0.1":
+  "integrity" "sha512-g9p6bZV3HlSUM35QPvFWiP/PckDVe5jLPDhx6PfMuy06o+htesJTyDu7zRdXnOm3BY8pXmxb+QY5qIcsoWMGNg=="
+  "resolved" "https://registry.npmjs.org/file-match/-/file-match-1.0.2.tgz"
+  "version" "1.0.2"
+  dependencies:
+    "utils-extend" "^1.0.6"
+
+"file-system@^2.2.2":
+  "integrity" "sha512-YgbXEVCu21CfmoeJ1rFLVLPGhW9o7iCzVFqk7ydy2TxF7rXH2YB68CFgDXLOvTD2pMLtg8paVqurzVjxGRdYmw=="
+  "resolved" "https://registry.npmjs.org/file-system/-/file-system-2.2.2.tgz"
+  "version" "2.2.2"
+  dependencies:
+    "file-match" "^1.0.1"
+    "utils-extend" "^1.0.4"
+
 "filelist@^1.0.1":
   "integrity" "sha512-w1cEuf3S+DrLCQL7ET6kz+gmlJdbq9J7yXCSjK/OZCPA+qEN1WyF4ZAf0YYJa4/shHJra2t/d/r8SV4Ji+x+8Q=="
   "resolved" "https://registry.npmjs.org/filelist/-/filelist-1.0.4.tgz"
@@ -5375,6 +5390,16 @@
   "integrity" "sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw=="
   "resolved" "https://registry.npmjs.org/he/-/he-1.2.0.tgz"
   "version" "1.2.0"
+
+"highlight.js@^10.7.3":
+  "integrity" "sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A=="
+  "resolved" "https://registry.npmjs.org/highlight.js/-/highlight.js-10.7.3.tgz"
+  "version" "10.7.3"
+
+"highlightjs-solidity@^2.0.6":
+  "integrity" "sha512-DySXWfQghjm2l6a/flF+cteroJqD4gI8GSdL4PtvxZSsAHie8m3yVe2JFoRg03ROKT6hp2Lc/BxXkqerNmtQYg=="
+  "resolved" "https://registry.npmjs.org/highlightjs-solidity/-/highlightjs-solidity-2.0.6.tgz"
+  "version" "2.0.6"
 
 "hmac-drbg@^1.0.1":
   "integrity" "sha512-Tti3gMqLdZfhOQY1Mzf/AanLiqh1WTiJgEj26ZuYQ9fbkLomzGchCws4FyrSd4VkpBfiNhaE1On+lOz894jvXg=="
@@ -9439,6 +9464,11 @@
   "integrity" "sha512-Z0DbgELS9/L/75wZbro8xAnT50pBVFQZ+hUEueGDU5FN51YSCYM+jdxsfCiHjwNP/4LCDD0i/graKpeBnOXKRA=="
   "resolved" "https://registry.npmjs.org/utila/-/utila-0.4.0.tgz"
   "version" "0.4.0"
+
+"utils-extend@^1.0.4", "utils-extend@^1.0.6":
+  "integrity" "sha512-+VzQieEAijyCFGqnGAWIy7Em1dFGdgf1w+orKwmTWHyaGL19aw9Oq5e5ZZaxgcS777AkPYEsbgWqpz5E6KniPg=="
+  "resolved" "https://registry.npmjs.org/utils-extend/-/utils-extend-1.0.8.tgz"
+  "version" "1.0.8"
 
 "utils-merge@1.0.1":
   "integrity" "sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA=="

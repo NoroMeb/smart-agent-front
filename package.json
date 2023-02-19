@@ -10,6 +10,9 @@
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.3",
     "ethers": "^5.7.2",
+    "file-system": "^2.2.2",
+    "highlight.js": "^10.7.3",
+    "highlightjs-solidity": "^2.0.6",
     "jquery": "^3.6.3",
     "popper.js": "^1.16.1",
     "react": "^18.2.0",
@@ -44,5 +47,10 @@
   },
   "devDependencies": {
     "dotenv": "^16.0.3"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
   }
 }
