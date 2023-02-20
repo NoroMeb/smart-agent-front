@@ -14,12 +14,13 @@ body {
 
 .custom-offcanvas.offcanvas {
   width: inherit;
-  background-color: #282828;
+  background-color: black;
 }
 
 .navbar {
-  background-color: #282828;
+  background-color: black;
   position: fixed;
+  height: 80px;
 }
 
 .custom-button {
@@ -102,7 +103,7 @@ header {
 }
 
 .how-it-works:hover {
-  background-color: #f68c8a;
+  background-color: #3e3636;
 }
 
 .logo {
@@ -151,21 +152,17 @@ li:hover {
   border-left: solid;
 }
 
-/* .main-scroll {
-  overflow-y: auto;
-  margin-top: 62px;
-  color: #ff0000;
-} */
-
 .main-scroll {
   overflow: auto;
+  background-color: #282828;
   /* margin-top: 100px; */
 }
 
 .main {
   overflow: auto;
-  background-color: #f68c8a;
+  background-color: #282828;
   max-height: 30rem;
+  color: aliceblue;
 }
 
 .create-collab-button {
@@ -204,11 +201,21 @@ li:hover {
 
 *::-webkit-scrollbar-track {
   background: #282828;
-  border-radius: 0px 8px 8px 0px;
 }
 
 *::-webkit-scrollbar-thumb {
   background-color: #c23626;
+  border-radius: 8px;
+  border: 4px solid #282828;
+}
+
+.code {
+  width: 800px;
+  overflow: auto;
+  overflow-x: auto;
+  max-height: 35rem;
+  white-space: pre-wrap;
+  margin-top: 72px;
   border-radius: 10px;
-  border: 3px solid #282828;
+  background-color: black;
 }
