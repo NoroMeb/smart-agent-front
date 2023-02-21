@@ -191,7 +191,7 @@ li:hover {
 /* Firefox */
 * {
   scrollbar-width: auto;
-  scrollbar-color: #c23626 #282828;
+  scrollbar-color: #c23626 black;
 }
 
 /* Chrome, Edge, and Safari */
@@ -200,13 +200,14 @@ li:hover {
 }
 
 *::-webkit-scrollbar-track {
-  background: #282828;
+  background-color: black;
+  border-radius: 12px;
 }
 
 *::-webkit-scrollbar-thumb {
   background-color: #c23626;
   border-radius: 8px;
-  border: 4px solid #282828;
+  border: 4px solid black;
 }
 
 .code {
@@ -216,6 +217,6 @@ li:hover {
   max-height: 35rem;
   white-space: pre-wrap;
   margin-top: 72px;
-  border-radius: 10px;
+  border-radius: 12px;
   background-color: black;
 }
