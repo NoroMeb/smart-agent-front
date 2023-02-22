@@ -141,14 +141,14 @@ header {
   display: inline-block;
 }
 
-li {
+.li-left-bar {
   font-family: "Jost";
 }
-li:active {
+.li-left-bar:active {
   background-color: #c23626;
 }
 
-li:hover {
+.li-left-bar:hover {
   border-left: solid;
 }
 

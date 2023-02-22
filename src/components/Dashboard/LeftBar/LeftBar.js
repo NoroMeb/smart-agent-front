@@ -12,14 +12,14 @@ function LeftBar() {
 
 
 
-                    <li class='py-2'>
+                    <li class='py-2 li-left-bar'>
                         <a class="nav-link px-3 active " role="button" data-bs-dismiss="offcanvas" onClick={() => { navigate('/dashboard/add-collaboration'); }}>
                             <span class="me-2"><i class='fas fa-plus'></i></span>
 
                             <span style={{ marginLeft: '7px' }}>New Collaboration</span>
                         </a>
                     </li>
-                    <li class='py-2'>
+                    <li class='py-2 li-left-bar'>
                         <a class="nav-link px-3 active " role="button" data-bs-dismiss="offcanvas" onClick={() => { navigate('/dashboard/collaborations'); }}>
                             <span class="me-2"><i class='far fa-handshake'></i></span>
 
