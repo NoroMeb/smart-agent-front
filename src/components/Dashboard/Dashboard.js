@@ -22,7 +22,7 @@ function Dashboard() {
                     <LeftBar />
                 </div>
 
-                <div class="col-12 col-lg ms-auto main-scroll d-flex align-items-center justify-content-center" >
+                <div class="col-12 col-lg ms-auto main-scroll d-flex align-items-center justify-content-center mt-4" >
                     <Outlet context={account} />
                 </div>
             </div>
