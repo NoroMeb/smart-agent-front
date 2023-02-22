@@ -6,7 +6,7 @@ export function Header(props) {
 
     const { activateBrowserWallet, account, deactivate } = useEthers();
 
-    props.updateMyProp(account);
+    props.updateAccount(account);
 
 
 

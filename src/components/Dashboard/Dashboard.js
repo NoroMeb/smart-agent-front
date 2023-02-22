@@ -5,7 +5,7 @@ import { useState } from "react";
 function Dashboard() {
 
     const [account, setAccount] = useState();
-    function updateMyProp(value) {
+    function updateAccount(value) {
         setAccount(value);
     }
     // console.log(account);
@@ -15,7 +15,7 @@ function Dashboard() {
 
         <div class="container-fluid ">
             <div class="row max-width" >
-                <Header updateMyProp={updateMyProp} />
+                <Header updateAccount={updateAccount} />
             </div>
             <div class="row max-width" style={{ backgroundColor: "#282828", height: "100vh" }}>
                 <div class="col-lg-2 left-fixed" >
