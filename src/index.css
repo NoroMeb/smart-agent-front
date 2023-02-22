@@ -216,7 +216,15 @@ header {
   overflow-x: auto;
   max-height: 35rem;
   white-space: pre-wrap;
-  margin-top: 72px;
+  margin-top: 56px;
   border-radius: 12px;
   background-color: black;
+}
+
+li:active {
+  background-color: #c23626;
+}
+
+a {
+  text-decoration: none;
 }
