@@ -28,16 +28,23 @@ function LeftBar() {
                     </li>
 
 
-                    <li class='py-2'>
-                        <a class="nav-link px-3 active" role="button" data-bs-dismiss="offcanvas" onClick={() => { navigate('/dashboard/videos'); }}>
-                            <span class="me-2"><i class='fab fa-youtube'></i></span>
-                            <span style={{ marginLeft: '4px' }}>Videos</span>
+                    <li class='py-2 li-left-bar'>
+                        <a class="nav-link px-3 active" role="button" data-bs-dismiss="offcanvas" >
+                            <span class="me-2"><i class='fab fa-ethereum' style={{ fontSize: '18px' }}></i></span>
+                            <span style={{ marginLeft: '8px' }}>Claim Owings</span>
                         </a>
                     </li>
-                    <li class='py-2'>
+
+                    <li class='py-2 li-left-bar'>
+                        <a class="nav-link px-3 active" role="button" data-bs-dismiss="offcanvas" >
+                            <span class="me-2"><i class='fas fa-trash' style={{ fontSize: '14px' }}></i></span>
+                            <span style={{ marginLeft: '8px' }}>End Collaboration</span>
+                        </a>
+                    </li>
+                    <li class='py-2  li-left-bar'>
                         <a class="nav-link px-3 active" role="button" data-bs-dismiss="offcanvas" onClick={() => { navigate('/dashboard/smart-contract'); }}>
                             <span class="me-2"><i class='fas fa-file-contract'></i></span>
-                            <span style={{ marginLeft: '9px' }}>Smart Contract</span>
+                            <span style={{ marginLeft: '7px' }}>Smart Contract</span>
                         </a>
                     </li>
 
