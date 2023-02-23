@@ -40,7 +40,7 @@ function Collaborations() {
 
     return (
 
-        <div class=" col-lg-6 col-md-6 col-12">
+        <div class=" col-lg-6 col-md-6 col-12 collaboration">
 
             {!collab && <form onSubmit={handleSubmit} >
 
@@ -56,19 +56,18 @@ function Collaborations() {
                 </div>
             </form>}
             {collab && <div class="mt-4">
-                <div class="card text-center ">
+                <div class="card text-center " style={{ backgroundColor: '#D8DAD3' }}>
                     <div class="card-body">
                         <button type="button" class="btn-close" onClick={() => setCollab(undefined)}></button>
                         <h5 class="card-title">Collaboration</h5>
                     </div>
-                    <ul class="list-group list-group-flush">
+                    <ul class="list-group list-group-flush" style={{ color: 'red' }}>
                         <a href={"https://goerli.etherscan.io/address/" + collab[0]} target="_blank"><li class="list-group-item">Promoter</li></a>
                         <a href={"https://goerli.etherscan.io/address/" + collab[1]} target="_blank"><li class="list-group-item">Client</li></a>
                         <a href={collab[2]} target="_blank"><li class="list-group-item">Video Infos</li></a>
                         <li class="list-group-item">End date : {formatDate(Number(collab[3]))}</li>
-                        <li class="list-group-item">amount : {ethers.utils.formatEther(collab[4])} ETH</li>
+                        <li class="list-group-item">Amount per view : {ethers.utils.formatEther(collab[4])} ETH</li>
                         <li class="list-group-item">clientBalance : {ethers.utils.formatEther(collab[5])} ETH</li>
-                        <li class="list-group-item">lastViewsCount : {collab[6].toString()}</li>
                     </ul>
                 </div>
             </div>}
