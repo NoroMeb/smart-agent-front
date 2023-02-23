@@ -29,7 +29,7 @@ function LeftBar() {
 
 
                     <li class='py-2 li-left-bar'>
-                        <a class="nav-link px-3 active" role="button" data-bs-dismiss="offcanvas" >
+                        <a class="nav-link px-3 active" role="button" data-bs-dismiss="offcanvas" onClick={() => { navigate('/dashboard/claim-owings'); }}>
                             <span class="me-2"><i class='fab fa-ethereum' style={{ fontSize: '18px' }}></i></span>
                             <span style={{ marginLeft: '8px' }}>Claim Owings</span>
                         </a>
