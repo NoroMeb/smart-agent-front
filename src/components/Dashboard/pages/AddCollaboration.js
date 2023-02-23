@@ -60,6 +60,7 @@ export function AddCollaboration() {
     }
 
     const { state, send } = useCreateCollaboration();
+    const { status } = state
 
     function getVideoId(url) {
         const match = url.match(/(?:\/|%3D|v=)([\w-]{11})(?:[%#?&]|$)/);
@@ -76,13 +77,14 @@ export function AddCollaboration() {
 
         const videoUrl = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=" + videoId + "&key=" + youtubeApiKey;
 
-        const endDate = values["endDate"].split("-")
-        const newendDate = new Date(endDate[0], endDate[1], endDate[2])
-        const endTimestamp = newendDate.getTime()
+        // const endDate = values["endDate"].split("-")
+        const date = new Date(values['endDate']);
+        const endTimestamp = Math.round(date.getTime() / 1000);
         const amount = ethers.utils.parseEther(values["amountPerView"])
         const total = ethers.utils.parseEther(values["Total"])
+
         send(promoterAddress, clientAddress, videoUrl, endTimestamp, amount, { value: total })
-        console.log(state)
+        // console.log(seconds)
         event.preventDefault();
     }
     // -------------------------------------------------------------------------------
@@ -117,11 +119,10 @@ export function AddCollaboration() {
             <div class="input-group mb-3">
                 <span class="input-group-text">End date</span>
                 <input id="startDate" class="form-control" type="date" name="endDate" value={values.endDate} onChange={handleInputChange} />
-
             </div>
 
 
-            <div class="d-flex justify-content-center ">
+            <div class="d-flex justify-content-center mb-3">
 
                 <button type="submit" class="btn btn-primary create-collab-button mt-4" onClick={handleCreateCollaboration}>Create Collaboration</button>
             </div>
