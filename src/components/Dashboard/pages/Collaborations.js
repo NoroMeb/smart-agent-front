@@ -8,7 +8,7 @@ import { ethers } from 'ethers';
 
 function Collaborations() {
 
-    const paidPromotionAddress = "0x35B520F9BE399b6Ca2686eF46eeFE484Dc741B9C"
+    const paidPromotionAddress = "0x6f0424cB89Cc3eCe46D2FA1dcC7fd1907357ED47"
     const { abi } = PaidPromotion
 
 
