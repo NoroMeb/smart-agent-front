@@ -17,7 +17,7 @@ function Dashboard() {
             <div class="row max-width" >
                 <Header updateAccount={updateAccount} />
             </div>
-            <div class="row max-width" style={{ backgroundColor: "#282828", height: "100vh" }}>
+            <div class="row max-width" style={{ backgroundColor: "#5b616a", height: "100vh" }}>
                 <div class="col-lg-2 left-fixed" >
                     <LeftBar />
                 </div>
