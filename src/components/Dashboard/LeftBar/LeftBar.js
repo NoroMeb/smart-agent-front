@@ -36,8 +36,8 @@ function LeftBar() {
                     </li>
 
                     <li class='py-2 li-left-bar'>
-                        <a class="nav-link px-3 active" role="button" data-bs-dismiss="offcanvas" >
-                            <span class="me-2"><i class='fas fa-trash' style={{ fontSize: '14px' }}></i></span>
+                        <a class="nav-link px-3 active" role="button" data-bs-dismiss="offcanvas" onClick={() => { navigate('/dashboard/end-collaboration'); }}>
+                            <span class="me-2"><i class='fas fa-trash' style={{ fontSize: '14px' }} ></i></span>
                             <span style={{ marginLeft: '8px' }}>End Collaboration</span>
                         </a>
                     </li>

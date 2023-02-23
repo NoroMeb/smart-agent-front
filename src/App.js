@@ -7,6 +7,7 @@ import Collaborations from './components/Dashboard/pages/Collaborations';
 import Videos from './components/Dashboard/pages/Videos';
 import Test from './components/Test';
 import SmartContract from './components/Dashboard/pages/SmartContract';
+import EndCollaboration from './components/Dashboard/pages/EndCollaboration';
 function App() {
   return (
     <DAppProvider config={{}}>
@@ -18,6 +19,7 @@ function App() {
           <Route path="collaborations" element={<Collaborations />} />
           <Route path="videos" element={<Videos />} />
           <Route path="smart-contract" element={<SmartContract />} />
+          <Route path="end-collaboration" element={<EndCollaboration />} />
         </Route>
       </Routes>
 
