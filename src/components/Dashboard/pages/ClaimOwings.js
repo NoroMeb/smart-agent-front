@@ -1,7 +1,18 @@
 import { useState } from "react";
 import { useClaimOwings } from "../../../hooks/useClaimOwings";
+import { ethers } from "ethers";
+import { Contract } from '@ethersproject/contracts';
 
+import PaidPromotion from "./../../../chain-info/contracts/PaidPromotion.json";
 function ClaimOwings() {
+
+
+
+    const paidPromotionAddress = "0x6f0424cB89Cc3eCe46D2FA1dcC7fd1907357ED47"
+    const { abi } = PaidPromotion
+    const paidPromotionInterface = new ethers.utils.Interface(abi)
+    const paidPromotionContract = new Contract(paidPromotionAddress, paidPromotionInterface)
+
 
     const [id, setId] = useState(null)
 
@@ -13,9 +24,13 @@ function ClaimOwings() {
 
     const { status } = state
 
-    function handleEndCollaboration(event) {
-        send(id);
-        console.log(state.status);
+    function handleClaimOwings(event) {
+        const paidPromotionAddress = "0x6f0424cB89Cc3eCe46D2FA1dcC7fd1907357ED47"
+        const fee = ethers.utils.parseEther("0.1")
+        const myFunctionInterface = new ethers.utils.Interface(["function withdrawEther(uint256 _id) public returns (bytes32 requestId)"]);
+        const encodedParams = myFunctionInterface.encodeFunctionData("withdrawEther(uint256)", [id]);
+        send(paidPromotionAddress, fee, encodedParams);
+
         event.preventDefault();
 
     }
@@ -32,10 +47,9 @@ function ClaimOwings() {
                 </div>
                 <div class="d-flex justify-content-center ">
 
-                    <button type="submit" class="btn btn-primary create-collab-button mt-4" onClick={handleEndCollaboration} >End Collaboration</button>
+                    <button type="submit" class="btn btn-primary create-collab-button mt-4" onClick={handleClaimOwings} >Claim Owings</button>
                 </div>
             </form>
-            <p>Status: {status}</p>
         </div>
     );
 }
