@@ -39,7 +39,6 @@ function EndCollaboration() {
                     <button type="submit" class="btn btn-primary create-collab-button mt-4" onClick={handleEndCollaboration} >End Collaboration</button>
                 </div>
             </form>
-            <p>Status: {status}</p>
         </div>
     );
 }
