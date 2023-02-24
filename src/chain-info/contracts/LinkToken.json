@@ -1,5 +1,5 @@
-[
-  [
+{
+  "abi": [
     {
       "constant": true,
       "inputs": [],
@@ -169,4 +169,4 @@
       "type": "event"
     }
   ]
-]
+}
