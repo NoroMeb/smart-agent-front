@@ -2,9 +2,16 @@ import { useState } from "react";
 import { useClaimOwings } from "../../../hooks/useClaimOwings";
 import { ethers } from "ethers";
 import { Contract } from '@ethersproject/contracts';
+import { Popover } from "bootstrap";
 
 import PaidPromotion from "./../../../chain-info/contracts/PaidPromotion.json";
 function ClaimOwings() {
+
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-toggle="popover"]'));
+    var popoverList = popoverTriggerList.map(function (popoverTrigger) {
+        return new Popover(popoverTrigger);
+    });
+
 
 
 
@@ -31,6 +38,7 @@ function ClaimOwings() {
         const encodedParams = myFunctionInterface.encodeFunctionData("withdrawEther(uint256)", [id]);
         send(paidPromotionAddress, fee, encodedParams);
 
+        event.currentTarget.disabled = true;
         event.preventDefault();
 
     }
@@ -47,7 +55,12 @@ function ClaimOwings() {
                 </div>
                 <div class="d-flex justify-content-center ">
 
-                    <button type="submit" class="btn btn-primary create-collab-button mt-4" onClick={handleClaimOwings} >Claim Owings</button>
+                    <button type="submit" class="btn btn-primary create-collab-button mt-4" onClick={handleClaimOwings}
+                        data-toggle="popover"
+                        data-bs-content="You need 0.1 LINK in addition to network fees"
+                        data-bs-trigger="hover focus"
+                        data-bs-placement="bottom"
+                    >Claim Owings</button>
                 </div>
             </form>
         </div>
