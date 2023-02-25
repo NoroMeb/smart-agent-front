@@ -1,20 +1,35 @@
-import { Link } from "react-router-dom";
-function Navbar() {
+import { useState } from "react";
+function NavBar() {
 
-  return (
-    <header className='Navbar'>
-      <div class="logo">
-        <h1 className="logo-text">SmartAgent</h1>
-      </div>
-      <div className="buttons">
-        <button className='how-it-works'>Fund us</button>
-        <button className='how-it-works'>Whitepaper</button>
-        <button className='how-it-works'>Smart contract</button>
-        <button className='how-it-works'>How it works</button>
-        <Link to={"/dashboard"} target="_blank"><button className='launch-app' >Start App</button></Link>
-      </div>
-    </header>
-  );
+    const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+
+    const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
+
+
+    return (
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" >
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    Smart Agent
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded={!isNavCollapsed ? true : false} aria-label="Toggle navigation" onClick={handleNavCollapse}>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+    );
 }
 
-export default Navbar;
+export default NavBar;
