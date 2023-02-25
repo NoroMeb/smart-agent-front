@@ -23,7 +23,7 @@ contract PaidPromotion is ChainlinkClient, ConfirmedOwner {
     }
 
     mapping(uint256 => Collab) public collabById;
-    uint256 id;
+    uint256 public id;
     uint256 fulfillID;
 
     constructor(
@@ -34,7 +34,7 @@ contract PaidPromotion is ChainlinkClient, ConfirmedOwner {
         setChainlinkToken(_chainlinkToken);
         setChainlinkOracle(_chainlinkOracle);
         jobId = bytes(_jobId);
-        fee = (1 * LINK_DIVISIBILITY) / 10;
+        fee = (1 * LINK_DIVISIBILITY) / 10; // 0,1 * 10**18 (Varies by network and job) .
         id = 0;
     }
 
@@ -124,5 +124,9 @@ contract PaidPromotion is ChainlinkClient, ConfirmedOwner {
         payable(msg.sender).transfer(collab.clientBalance);
         collab.clientBalance = 0;
         collabById[_id] = collab;
+    }
+
+    function getCollab(uint256 _id) external view returns(Collab memory) {
+        return collabById[_id];
     }
 }
