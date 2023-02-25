@@ -6,7 +6,7 @@ function LeftBar() {
     return (
 
 
-        <div class=" col-sm-2 col-md-1 offcanvas offcanvas-start text-white custom-offcanvas " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel"  >
+        <div class=" col-sm-2 col-md-1 offcanvas offcanvas-start text-white custom-offcanvas " tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel"  >
             <nav class="navbar-dark mt-4">
                 <ul class="navbar-nav">
 
