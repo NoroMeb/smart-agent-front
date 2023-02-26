@@ -1,8 +1,9 @@
 import Main from "./Main";
 import NavBar from "./NavBar";
+import HowItWorks from "./HowItWorks";
 function Home() {
     return (
-        <div class="container-fluid home">
+        <div class="container-fluid home" >
             <div class="row" style={{ height: '62px' }}>
                 <NavBar />
 
@@ -12,8 +13,8 @@ function Home() {
                     <Main />
                 </div>
             </div>
-            <div class="row">
-
+            <div class="row" style={{ backgroundColor: 'black' }}>
+                <HowItWorks />
             </div>
         </div>
 
