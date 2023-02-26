@@ -4,8 +4,10 @@ function Main() {
 
     return (
         <div class="home-main">
-            <h1>A trust-less way to collaborate</h1>
-            <h2>in your Youtube Videos</h2>
+            <div >
+                <h1 class="home-main-text">A trust-less way to <br /> collaborate</h1>
+                <h2 class="home-main-text">in your Youtube Videos</h2>
+            </div>
         </div>
     );
 }
