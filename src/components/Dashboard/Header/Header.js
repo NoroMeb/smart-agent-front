@@ -20,7 +20,7 @@ export function Header(props) {
 
             <div class="container-fluid">
                 <a
-                    class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
+                    class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold dashboard-navbar-brand"
                     href="#"
                 >Smart Agent</a>
                 <button
